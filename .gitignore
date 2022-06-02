@@ -1,27 +1,35 @@
-# misc
+# dotenv
+.env
+.env.*
+!.env.example
+
+# misc / ide
 .DS_Store
 *.swp
 *.db
 *.log
+.idea
 
-# python for tools
-__pycache__
-.pytest_cache
-.venv/
+# temp files
+temp
+cache
 
 # node
-node_modules/
-lib/
-dist/
+node_modules
+package-lock.json
+coverage
+coverage.json
+lib
+dist
+
+# any generated protobufs
+src/proto/*.ts
+!src/proto/index.ts
 
 # hardhat / typechain artifacts
 cache/
 typechain/
 
-# dotenv
-.env*
-!.env.template
-
-# ts generated protobufs
-src/proto/*.ts
-!src/proto/index.ts
+# preempt any keys
+*.keys
+*.key
