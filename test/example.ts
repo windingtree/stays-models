@@ -1,4 +1,4 @@
-import { utils, Wallet } from 'ethers'
+import { utils, Wallet } from 'ethers';
 import {
   Exception,
   Facility,
@@ -6,13 +6,13 @@ import {
   ItemType,
   Space,
   SpaceTier
-} from '../src/proto/facility'
-import { ServiceProviderData } from '../src/proto/storage'
-import { brotliCompressSync } from 'node:zlib'
-import { TypedDataDomain } from '@ethersproject/abstract-signer'
+} from '../src/proto/facility';
+import { ServiceProviderData } from '../src/proto/storage';
+import { brotliCompressSync } from 'node:zlib';
+import { TypedDataDomain } from '@ethersproject/abstract-signer';
 
-import { utils as vUtils, eip712 } from '@windingtree/videre-sdk'
-import { SignedMessage } from '@windingtree/videre-sdk/dist/cjs/utils'
+import { utils as vUtils, eip712 } from '@windingtree/videre-sdk';
+import { SignedMessage } from '@windingtree/videre-sdk/dist/cjs/utils';
 
 async function main() {
   const serviceProviderData: ServiceProviderData = {
@@ -193,28 +193,28 @@ async function main() {
       }
     ],
     terms: []
-  }
+  };
 
   const domain: TypedDataDomain = {
     name: 'stays',
     version: '1',
     chainId: 100
-  }
+  };
 
   const messageToUpload = await vUtils.createSignedMessage(
     domain,
     eip712.storage.ServiceProviderData,
     serviceProviderData as ServiceProviderData & SignedMessage,
     new Wallet(utils.randomBytes(32))
-  )
+  );
 
-  console.log(messageToUpload)
-  console.log(`Signature: ${utils.hexlify(messageToUpload.signature)}`)
+  console.log(messageToUpload);
+  console.log(`Signature: ${utils.hexlify(messageToUpload.signature)}`);
   console.log(
     `Protobuf length: ${
       brotliCompressSync(ServiceProviderData.toBinary(messageToUpload)).length
     }`
-  )
+  );
 }
 
-main()
+main();
