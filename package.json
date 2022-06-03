@@ -26,9 +26,11 @@
     "tsc": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
     "prepublish": "yarn protoc:libs && yarn protoc:local && yarn protoc:dist && yarn tsc",
     "prepare": "husky install",
-    "lint": "eslint src",
+    "lint": "npx eslint . --ext .ts",
+    "lint:fix": "npx eslint . --ext .ts --fix && npx prettier --write .",
     "test": "exit 0",
     "build": "exit 0",
+    "clean": "rm -rf dist && rm -rf ./src/proto/*.ts",
     "protoc:libs": "cp -pR ./node_modules/@windingtree/videre-sdk/dist/proto/*.proto ./src/proto/",
     "protoc:local": "protoc --ts_out ./src/proto --proto_path ./src/proto ./src/proto/*.proto",
     "protoc:dist": "rm -rf ./dist/proto && mkdir -p ./dist/proto && cp -R ./src/proto/*.proto ./dist/proto/"
