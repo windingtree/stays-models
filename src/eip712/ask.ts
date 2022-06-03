@@ -1,4 +1,4 @@
-import { TypedDataField } from '@ethersproject/abstract-signer'
+import { TypedDataField } from '@ethersproject/abstract-signer';
 
 export const Date: Record<string, TypedDataField[]> = {
   Date: [
@@ -6,7 +6,7 @@ export const Date: Record<string, TypedDataField[]> = {
     { name: 'month', type: 'uint8' },
     { name: 'day', type: 'uint8' }
   ]
-}
+};
 
 export const Ask: Record<string, TypedDataField[]> = {
   Ask: [
@@ -16,5 +16,5 @@ export const Ask: Record<string, TypedDataField[]> = {
     { name: 'numPaxChild', type: 'uint32' },
     { name: 'numSpacesReq', type: 'uint32' }
   ]
-}
-Ask['Date'] = Date.Date
+};
+Ask['Date'] = Date.Date;
