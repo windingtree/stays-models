@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message Beg {
+  // videre line that we are begging to be whitelisted on
+  bytes line = 1;
+  // signature of the begger
+  bytes signature = 2;
+}
