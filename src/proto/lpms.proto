@@ -70,7 +70,6 @@ message DayOfWeekLOSRule {
 // TODO: Allow change in rates based on adult / child pricing.
 message Rates {
   uint32 cost = 1;
-  uint32 includedOccupancy = 2;
 }
 
 message DayOfWeekRateModifierElement {
