@@ -83,7 +83,7 @@ message DayOfWeekRateModifierElement {
 // if fixed, this is to be in the same base as the quote currency
 // otherwise specified as a ratio which may increase or decrease cost.
 // NOTE: fixed amount is a signed integer so may be negative, or positive.
-message DayOfWeekRateModifer {
+message DayOfWeekRateModifier {
   optional DayOfWeekRateModifierElement mon = 1;
   optional DayOfWeekRateModifierElement tue = 2;
   optional DayOfWeekRateModifierElement wed = 3;
