@@ -25,6 +25,11 @@ message Connectivity {
 message Policies {
   // ISO4217 currency code for all
   string currency_code = 1;
+
+  // Timezone that facility is in, e.g. "Asia/Tbilisi"
+  // This is the IANA database timezone name.
+  string timezone = 2;
+
   // Check in time.
   oneof check_in_time_oneof {
     // 24hr clock, e.g. "1500" or "1600", in hotel local time.
