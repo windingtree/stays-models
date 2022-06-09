@@ -42,10 +42,11 @@ message Availability {
 }
 
 // Specify the notice period required in order to make this booking
-// 1). `facilityId` . `spaceId` . `notice_required` = space level number of days required notice
+// This value is specified as a number in seconds by which the booking must give notice
+// 1). `facilityId` . `spaceId` . `notice_required` = space level number of seconds required notice
 // 2). `facilityId` . `notice_required` = facility level notice requirements
 message NoticeRequiredRule {
-  uint32 numDays = 1;
+  uint32 value = 1;
 }
 
 message DayOfWeekLOSRuleElement {
