@@ -1,0 +1,15 @@
+
+syntax = "proto3";
+
+package videre.stays;
+
+import "photo.proto";
+
+message Term {
+  // term name
+  string name = 1;
+  // term description
+  string description = 2;
+  // term photo
+  repeated videre.type.Photo photos = 3;
+}
