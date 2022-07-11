@@ -10,6 +10,6 @@ message Term {
   string name = 1;
   // term description
   string description = 2;
-  // term photos
+  // term photos array
   repeated videre.type.Photo photos = 3;
 }
