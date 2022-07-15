@@ -13,7 +13,7 @@ message Ask {
   // the number of adults staying
   uint32 numPaxAdult = 3;
   // the number of children staying
-  optional uint32 numPaxChild = 4;
+  uint32 numPaxChild = 4;
   // the number of spaces (rooms)
   uint32 numSpacesReq = 5;
 }
